@@ -1,3 +1,4 @@
+Yan, [07.07.2025 20:44]
 public class LessonOne {
 
     // 1. Метод для печати трех слов в столбец
@@ -133,69 +134,70 @@ public class LessonOne {
 
     // Вспомогательный метод для печати матрицы (без Arrays.toString())
 
-public static void printMatrix(int[][] matrix) {
-    System.out.println("[");
-    for (int[] row : matrix) {
-        System.out.print("  [");
-        for (int i = 0; i < row.length; i++) {
-            System.out.print(row[i]);
-            if (i < row.length - 1) {
-                System.out.print(", ");
+    Yan, [07.07.2025 20:44]
+    public static void printMatrix(int[][] matrix) {
+        System.out.println("[");
+        for (int[] row : matrix) {
+            System.out.print("  [");
+            for (int i = 0; i < row.length; i++) {
+                System.out.print(row[i]);
+                if (i < row.length - 1) {
+                    System.out.print(", ");
+                }
             }
+            System.out.println("]");
         }
         System.out.println("]");
     }
-    System.out.println("]");
-}
 
-// Вызов всех методов через main
-public static void main(String[] args) {
-    System.out.println("1. printThreeWords():");
-    printThreeWords();
+    // Главный метод для тестирования
+    public static void main(String[] args) {
+        System.out.println("1. printThreeWords():");
+        printThreeWords();
 
-    System.out.println("\n2. checkSumSign():");
-    checkSumSign();
+        System.out.println("\n2. checkSumSign():");
+        checkSumSign();
 
-    System.out.println("\n3. printColor():");
-    printColor();
+        System.out.println("\n3. printColor():");
+        printColor();
 
-    System.out.println("\n4. compareNumbers():");
-    compareNumbers();
+        System.out.println("\n4. compareNumbers():");
+        compareNumbers();
 
-    System.out.println("\n5. isSumInRange(5, 10):");
-    System.out.println(isSumInRange(5, 10));
+        System.out.println("\n5. isSumInRange(5, 10):");
+        System.out.println(isSumInRange(5, 10));
 
-    System.out.println("\n6. checkNumberSign(-5):");
-    checkNumberSign(-5);
+        System.out.println("\n6. checkNumberSign(-5):");
+        checkNumberSign(-5);
 
-    System.out.println("\n7. isNegative(-3):");
-    System.out.println(isNegative(-3));
+        System.out.println("\n7. isNegative(-3):");
+        System.out.println(isNegative(-3));
 
-    System.out.println("\n8. printStringMultipleTimes(\"Hello\", 3):");
-    printStringMultipleTimes("Hello", 3);
+        System.out.println("\n8. printStringMultipleTimes(\"Hello\", 3):");
+        printStringMultipleTimes("Hello", 3);
 
-    System.out.println("\n9. isLeapYear(2024):");
-    System.out.println(isLeapYear(2024));
+        System.out.println("\n9. isLeapYear(2024):");
+        System.out.println(isLeapYear(2024));
 
-    System.out.println("\n10. invertArray([1, 0, 1]):");
-    int[] array10 = {1, 0, 1};
-    invertArray(array10);
-    printArray(array10);
+        System.out.println("\n10. invertArray([1, 0, 1]):");
+        int[] array10 = {1, 0, 1};
+        invertArray(array10);
+        printArray(array10);
 
-    System.out.println("\n11. fillArray():");
-    printArray(fillArray());
+        System.out.println("\n11. fillArray():");
+        printArray(fillArray());
 
-    System.out.println("\n12. multiplyLessThanSix([1, 5, 3, 2, 11]):");
-    int[] array12 = {1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};
-    multiplyLessThanSix(array12);
-    printArray(array12);
+        System.out.println("\n12. multiplyLessThanSix([1, 5, 3, 2, 11]):");
+        int[] array12 = {1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};
+        multiplyLessThanSix(array12);
+        printArray(array12);
 
-    System.out.println("\n13. fillDiagonals(4x4):");
-    int[][] matrix13 = new int[4][4];
-    fillDiagonals(matrix13);
-    printMatrix(matrix13);
+        System.out.println("\n13. fillDiagonals(4x4):");
+        int[][] matrix13 = new int[4][4];
+        fillDiagonals(matrix13);
+        printMatrix(matrix13);
 
-    System.out.println("\n14. createArray(5, 10):");
-    printArray(createArray(5, 10));
-}
+        System.out.println("\n14. createArray(5, 10):");
+        printArray(createArray(5, 10));
+    }
 }
