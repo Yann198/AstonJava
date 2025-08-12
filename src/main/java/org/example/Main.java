@@ -1,23 +1,81 @@
 package org.example;
 
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        PhoneDirectory phoneBook = new PhoneDirectory();
+        Scanner scanner = new Scanner(System.in);
 
-        // Добавляем записи
-        phoneBook.add("Иванов", "+7 123 456-78-90");
-        phoneBook.add("Петров", "+7 987 654-32-10");
-        phoneBook.add("Иванов", "+7 555 555-55-55"); // Второй номер для Иванова
-        phoneBook.add("Сидоров", "+7 111 222-33-44");
-        phoneBook.add("Петров", "+7 999 888-77-66"); // Второй Петров (однофамилец)
+        System.out.println("Выберите программу:");
+        System.out.println("1 - Вычисление факториала");
+        System.out.println("2 - Площадь треугольника");
+        System.out.println("3 - Арифметические операции");
+        System.out.println("4 - Сравнение чисел");
+        System.out.print("Введите номер: ");
 
-        // Выводим весь справочник
-        phoneBook.printAll();
+        int choice = scanner.nextInt();
 
-        // Поиск номеров
-        System.out.println("\nПоиск по фамилии:");
-        System.out.println("Иванов: " + phoneBook.get("Иванов"));
-        System.out.println("Петров: " + phoneBook.get("Петров"));
-        System.out.println("Несуществующая фамилия: " + phoneBook.get("Васильев"));
+        switch (choice) {
+            case 1:
+                runFactorialProgram(scanner);
+                break;
+            case 2:
+                runTriangleAreaProgram(scanner);
+                break;
+            case 3:
+                runArithmeticProgram(scanner);
+                break;
+            case 4:
+                runComparisonProgram(scanner);
+                break;
+            default:
+                System.out.println("Неверный выбор!");
+        }
+
+        scanner.close();
+    }
+
+    // 1. Факториал
+    private static void runFactorialProgram(Scanner scanner) {
+        System.out.print("Введите число для вычисления факториала: ");
+        int n = scanner.nextInt();
+        long result = FactorialCalculator.calculateFactorial(n);
+        System.out.println("Факториал " + n + " = " + result);
+    }
+
+    // 2. Площадь треугольника
+    private static void runTriangleAreaProgram(Scanner scanner) {
+        System.out.print("Введите сторону A: ");
+        double a = scanner.nextDouble();
+        System.out.print("Введите сторону B: ");
+        double b = scanner.nextDouble();
+        System.out.print("Введите сторону C: ");
+        double c = scanner.nextDouble();
+
+        double area = TriangleArea.calculateArea(a, b, c);
+        System.out.printf("Площадь треугольника = %.2f\n", area);
+    }
+
+    // 3. Арифметические операции
+    private static void runArithmeticProgram(Scanner scanner) {
+        System.out.print("Введите первое число: ");
+        int x = scanner.nextInt();
+        System.out.print("Введите второе число: ");
+        int y = scanner.nextInt();
+
+        System.out.println(x + " + " + y + " = " + ArithmeticOperations.add(x, y));
+        System.out.println(x + " - " + y + " = " + ArithmeticOperations.subtract(x, y));
+        System.out.println(x + " * " + y + " = " + ArithmeticOperations.multiply(x, y));
+        System.out.println(x + " / " + y + " = " + ArithmeticOperations.divide(x, y));
+    }
+
+    // 4. Сравнение чисел
+    private static void runComparisonProgram(Scanner scanner) {
+        System.out.print("Введите первое число: ");
+        int a = scanner.nextInt();
+        System.out.print("Введите второе число: ");
+        int b = scanner.nextInt();
+
+        System.out.println(NumberComparator.compare(a, b));
     }
 }
